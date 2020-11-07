@@ -3,12 +3,12 @@ import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
-import { CarouselComponent } from './carousel/carousel.component';
+import { QuizComponent } from './quiz-component/quiz.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CarouselComponent
+    QuizComponent
   ],
   imports: [
     BrowserModule,

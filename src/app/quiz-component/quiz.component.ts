@@ -1,13 +1,13 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import {QuizItem} from './QuizItem';
-import {QuizServiceService} from '../quiz-service.service';
+import {QuizItem} from '../models/QuizItem';
+import {QuizServiceService} from '../services/quiz-service.service';
 
 @Component({
-  selector: 'app-carousel',
-  templateUrl: './carousel.component.html',
-  styleUrls: ['./carousel.component.scss']
+  selector: 'app-quiz',
+  templateUrl: './quiz.component.html',
+  styleUrls: ['./quiz.component.scss']
 })
-export class CarouselComponent implements OnInit {
+export class QuizComponent implements OnInit {
 constructor(private quizService: QuizServiceService){}
 private itemList: QuizItem[] = [];
 private index = 0;

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { QuizItem } from './carousel/QuizItem';
+import { QuizItem } from '../models/QuizItem';
 
 @Injectable({
   providedIn: 'root'
