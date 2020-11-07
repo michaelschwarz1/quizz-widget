@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "QuizzWidget"
+    }
+  },
+  "defaultProject": "QuizzWidget",
+  "cli": {
+    "analytics": false
+  }
 }
