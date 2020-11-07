@@ -1,27 +1,21 @@
 # QuizzWidget
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
+This project was generated for [Junction Hack 2020](https://www.hackjunction.com). The main purpose is to bring more interaction into virtual event booths. This game can be embedded via iframe into the brella.io website or any other website. The Content of the Quiz is configurable by every booth partner. Users gain points which they can use to level up in their user profile. Currently the connection to a user profile is not implemented. The service collectiong the quizz data is currenlty only mocked. It's planned as a serverless application in azure functions written in .net core or python.
+## Live Demo
 
-## Development server
+You can checkout a live demo here:
+
+
+<iframe src="https://ambitious-rock-06c152103.azurestaticapps.net" width="660px" height="400px;" scrolling="no" ></iframe>
+## Local Development
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Tech Stack
+- Angular 10
+- Bootstrap 
+- Azure Static Web App
+## Continius Bild /  Contiuous integration
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+This project gets automatically build and deployed (CI/CD) to MS Azure as a Static Web App located at: https://ambitious-rock-06c152103.azurestaticapps.net .
+You can get more information about Azure Static Web Apps [here](https://docs.microsoft.com/de-de/learn/modules/publish-app-service-static-web-app-api/)
