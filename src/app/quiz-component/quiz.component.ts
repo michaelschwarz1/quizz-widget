@@ -54,7 +54,7 @@ voteFalse(): void{
   this.nextImage();
 }
 showResult(): void{
-  this.item.url = '../../assets/img/final.jpg';
+  this.item.url = '../../assets/img/final2.jpg';
   this.item.text = 'Your score is: ' + this.points + ' Points.';
   this.item.isTrue = null;
 }
