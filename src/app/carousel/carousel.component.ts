@@ -1,4 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import {QuizItem} from './QuizItem';
+import {QuizServiceService} from '../quiz-service.service';
 
 @Component({
   selector: 'app-carousel',
@@ -6,46 +8,59 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./carousel.component.scss']
 })
 export class CarouselComponent implements OnInit {
+constructor(private quizService: QuizServiceService){}
+private itemList: QuizItem[] = [];
+private index = 0;
+item: QuizItem;
+showStatus = false;
+quizSuccess = false;
+points = 0;
 
-private itemList = [{id:1, url:'https://upload.wikimedia.org/wikipedia/en/a/a9/Moomin_kuva.JPG', text:'Is this a munin?', isTrue: true},{id:2,url:'https://assets.pokemon.com/assets/cms2/img/misc/countries/at/country_detail_pokemon.png', text: 'Is this a munin?', isTrue:false},{ id:3, url:'https://upload.wikimedia.org/wikipedia/en/thumb/5/59/Moomin_characters.png/220px-Moomin_characters.png', text: 'Is this a Pokemon?', isTrue:false}];
-private index :number = 0;
-item:any;
-showStatus: boolean = false;
-quizSuccess:boolean = false;
-points: number = 0;
-@Output() success :EventEmitter<boolean> = new EventEmitter();
-nextImage(){
+nextImage(): void{
   this.showStatus = true;
   setTimeout(() =>
 {
-  this.showStatus= false;
+  this.showStatus = false;
   this.quizSuccess = null;
-  this.index +=1;
-  this.item = this.itemList[this.index];
+  this.index += 1;
+  if(this.itemList[this.index] != null){
+    this.item = this.itemList[this.index];
+  }else{
+    this.showResult();
+  }
+
 },
 2000);
 
 
 }
-voteTrue(){
-  if(this.item.isTrue){
-    this.quizSuccess=true;
+voteTrue(): void{
+  if (this.item.isTrue){
+    this.quizSuccess = true;
+    this.points += 1;
   }else{
-    this.quizSuccess=false;
+    this.quizSuccess = false;
   }
-this.nextImage();
+  this.nextImage();
 }
-voteFalse(){
-  if(!this.item.isTrue){
-    this.quizSuccess=true;
+voteFalse(): void{
+  if (!this.item.isTrue){
+    this.quizSuccess = true;
+    this.points += 1;
   }
   else{
-    this.quizSuccess=false;
+    this.quizSuccess = false;
   }
-    this.nextImage();
+  this.nextImage();
+}
+showResult(): void{
+  this.item.url = '../../assets/img/final.jpg';
+  this.item.text = 'Your score is: ' + this.points + ' Points.';
+  this.item.isTrue = null;
 }
   ngOnInit(): void {
-    this.item=this.itemList[this.index];
+    this.itemList = this.quizService.ListQuizItems();
+    this.item = this.itemList[this.index];
   }
 
 }
