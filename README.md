@@ -5,8 +5,12 @@ This project was generated for [Junction Hack 2020](https://www.hackjunction.com
 
 You can checkout a live demo here:
 
+[![app](/assets/app.jpg)](https://ambitious-rock-06c152103.azurestaticapps.net)
 
-<iframe src="https://ambitious-rock-06c152103.azurestaticapps.net" width="660px" height="400px;" scrolling="no" ></iframe>
+## Embedd
+You can easily embed this widget as an iframe into any website.
+
+`<iframe src="https://ambitious-rock-06c152103.azurestaticapps.net" width="658px" height="400px;" scrolling="no" ></iframe>`
 ## Local Development
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
